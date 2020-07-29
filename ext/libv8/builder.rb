@@ -18,9 +18,7 @@ module Libv8
          use_sysroot=false
          is_debug=#{debug_build? ? 'true' : 'false'}
          symbol_level=#{debug_build? ? '-1' : '0'}
-         is_component_build=false
-         v8_component_build=true
-         v8_monolithic=true
+         is_component_build=true
          v8_use_external_startup_data=false
          target_cpu="#{libv8_arch}"
          v8_target_cpu="#{libv8_arch}"
@@ -43,7 +41,7 @@ module Libv8
         puts 'Beginning compilation. This will take some time.'
         generate_gn_args
 
-        system 'ninja -v -C out.gn/libv8 v8_monolith'
+        system 'ninja -v -C out.gn/libv8 v8'
       end
       return $?.exitstatus
     end
