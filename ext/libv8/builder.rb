@@ -18,7 +18,7 @@ module Libv8
          use_sysroot=false
          is_debug=#{debug_build? ? 'true' : 'false'}
          symbol_level=#{debug_build? ? '-1' : '0'}
-         is_component_build=false
+         is_component_build=true
          v8_monolithic=true
          v8_use_external_startup_data=false
          target_cpu="#{libv8_arch}"
